@@ -15,5 +15,10 @@ public class Main {
                 regular hours: %.2f
                 overtime hours: %.2f
                 """, topEmployee.getTotalPay(), topEmployee.getRegularHours(), topEmployee.getOvertimeHours());
+
+        topEmployee.punchIn(9);
+        topEmployee.punchOut(17);
+
+        System.out.println(topEmployee.getRegularHours() + topEmployee.getOvertimeHours());
     }
 }
