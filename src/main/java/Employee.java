@@ -20,7 +20,7 @@ public class Employee {
 
     public double getOvertimeHours(){
         if(hoursWorked>40){
-            return hoursWorked-40;
+            return hoursWorked-40 ;
         }
         return 0;
     }
