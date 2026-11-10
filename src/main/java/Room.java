@@ -4,8 +4,11 @@ public class Room {
     private boolean occupied;
     private boolean dirty;
 
-    public Room(int numBeds) {
+    public Room(int numBeds, boolean occupied, boolean dirty) {
+
         this.numBeds = numBeds;
+        this.occupied = occupied;
+        this.dirty = dirty;
     }
 
     public int getNumBeds() {
@@ -41,13 +44,18 @@ public class Room {
     }
 
     public void cleanRoom(){
-        this.dirty = false;
+        if(!occupied){
+            this.dirty = false;
+        }
+
+
     }
 
     public boolean checkOut(){
         if(occupied){
-            cleanRoom();
             this.occupied = false;
+            cleanRoom();
+
             return true;
         }
         return false;

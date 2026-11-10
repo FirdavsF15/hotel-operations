@@ -45,6 +45,7 @@ public class Employee {
     public void punchIn(){
         LocalTime now = LocalTime.now();
         int hour = now.getHour();
+        int minutes =
 
         this.time = hour;
     }
@@ -59,7 +60,6 @@ public class Employee {
         int hour = now.getHour();
 
         hoursWorked+=hour - this.time;
-
     }
 
 
