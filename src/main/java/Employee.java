@@ -1,3 +1,5 @@
+import java.time.LocalTime;
+
 public class Employee {
 
     private String name;
@@ -40,9 +42,24 @@ public class Employee {
         this.time = time;
     }
 
+    public void punchIn(){
+        LocalTime now = LocalTime.now();
+        int hour = now.getHour();
+
+        this.time = hour;
+    }
+
     public void punchOut(int time){
         hoursWorked+= time - this.time;
         this.time = 0;
+    }
+
+    public void punchOut(){
+        LocalTime now = LocalTime.now();
+        int hour = now.getHour();
+
+        hoursWorked+=hour - this.time;
+
     }
 
 
