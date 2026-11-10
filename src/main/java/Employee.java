@@ -17,6 +17,9 @@ public class Employee {
         this.hoursWorked = hoursWorked;
     }
 
+    public int getTime(){
+        return time;
+    }
     public double getRegularHours(){
         return hoursWorked - getOvertimeHours();
     }
