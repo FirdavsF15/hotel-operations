@@ -28,11 +28,14 @@ public class Room {
         return !occupied && !dirty;
     }
 
-    public void checkIn(){
-        if(!occupied){
+    public boolean checkIn(){
+        if(!occupied && !dirty){
             this.occupied = true;
             this.dirty = true;
+            return true;
         }
+
+        return false;
 
 
     }
@@ -41,8 +44,13 @@ public class Room {
         this.dirty = false;
     }
 
-    public void checkOut(){
-        cleanRoom();
-        this.occupied = false;
+    public boolean checkOut(){
+        if(occupied){
+            cleanRoom();
+            this.occupied = false;
+            return true;
+        }
+        return false;
+
     }
 }
